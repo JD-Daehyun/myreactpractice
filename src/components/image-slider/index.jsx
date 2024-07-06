@@ -55,35 +55,37 @@ export default function ImageSlider({url, limit = 5, page = 1}){
         return <div>Error Occured! {errorMsg}</div>
     }
 
-    return <div className="container">
-        <BsArrowLeftCircleFill onClick={handlePrevious} className="arrow arrow-left"/>
-        {
-            images && images.length > 0 ?
-            images.map((image, index)=>
-                <img 
-                    key = {image.id}
-                    alt = {image.download_url}
-                    src = {image.download_url}
-                    className={currentSlide === index ? 'current-image' : 'current-image hide-current-image'}
-                />
-            )
-            : null
-        }
-        <BsArrowRightCircleFill onClick={handleNext} className="arrow arrow-right"/>
-        <span className="circle-indicators">
+    return <div className="background">
+            <div className="container">
+            <BsArrowLeftCircleFill onClick={handlePrevious} className="arrow arrow-left"/>
             {
-                images && images.length ?
-                images.map((_,index) => 
-                    <button
-                        key = {index}
-                        className={currentSlide === index ? 'current-indicator': 'current-indicator inactive-indicator'} 
-                        onClick = {()=> setCurrentSlide(index)}                   
-                    ></button>
+                images && images.length > 0 ?
+                images.map((image, index)=>
+                    <img 
+                        key = {image.id}
+                        alt = {image.download_url}
+                        src = {image.download_url}
+                        className={currentSlide === index ? 'current-image' : 'current-image hide-current-image'}
+                    />
                 )
                 : null
             }
+            <BsArrowRightCircleFill onClick={handleNext} className="arrow arrow-right"/>
+            <span className="circle-indicators">
+                {
+                    images && images.length ?
+                    images.map((_,index) => 
+                        <button
+                            key = {index}
+                            className={currentSlide === index ? 'current-indicator': 'current-indicator inactive-indicator'} 
+                            onClick = {()=> setCurrentSlide(index)}                   
+                        ></button>
+                    )
+                    : null
+                }
 
-        </span>
+            </span>
 
+        </div>
     </div>
 };
