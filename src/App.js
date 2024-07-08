@@ -1,30 +1,35 @@
 // import './App.css';
-import Accordian from './components/accordian';
-import RandomColor from './components/random-color';
-import StarRating from './components/star-rating';
-import ImageSlider from './components/image-slider';
-import LoadMoreData from './components/load-more-data';
-import TreeView from './components/tree-view';
-import menus from './components/tree-view/data'
-import QRCodeGenerator from './components/qr-code-generator';
-import LightDarkMode from './components/light-dark-mode';
-import ScrollIndicator from './components/scroll-indicator';
-import TabTest from './components/custom-tabs/tab-test';
-import ModalTest from './components/custom-modal-popup/modal-test';
+import Accordian from "./components/accordian";
+import RandomColor from "./components/random-color";
+import StarRating from "./components/star-rating";
+import ImageSlider from "./components/image-slider";
+import LoadMoreData from "./components/load-more-data";
+import TreeView from "./components/tree-view";
+import menus from "./components/tree-view/data";
+import QRCodeGenerator from "./components/qr-code-generator";
+import LightDarkMode from "./components/light-dark-mode";
+import ScrollIndicator from "./components/scroll-indicator";
+import TabTest from "./components/custom-tabs/tab-test";
+import ModalTest from "./components/custom-modal-popup/modal-test";
+import GitHubProfileFinder from "./components/github-profile-finder";
 function App() {
   return (
     <div className="App">
       {/* Accordian Component */}
-      <Accordian/> 
+      <Accordian />
 
       {/* Random Color Component */}
-      <RandomColor/>
+      <RandomColor />
 
       {/* Star Rating Component */}
-      <StarRating noOfStars={10}/>
+      <StarRating noOfStars={10} />
 
       {/* Image Slider Component */}
-      <ImageSlider url={'https://picsum.photos/v2/list'} limit={"10"} page={"1"}/>
+      <ImageSlider
+        url={"https://picsum.photos/v2/list"}
+        limit={"10"}
+        page={"1"}
+      />
 
       {/* Load More Data Component */}
       <LoadMoreData />
@@ -37,12 +42,15 @@ function App() {
       {/* Light and Dark Mode Component */}
       <LightDarkMode />
       {/* Scroll Indicator Component */}
-      <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/>
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
 
       {/* Custom Tabs Component */}
       <TabTest />
       {/* Custom Modal Component */}
       <ModalTest />
+
+      {/* Github Profile Finder Component */}
+      <GitHubProfileFinder />
     </div>
   );
 }
