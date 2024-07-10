@@ -14,50 +14,61 @@ import ModalTest from "./components/custom-modal-popup/modal-test";
 import GitHubProfileFinder from "./components/github-profile-finder";
 import SearchAutoComplete from "./components/search-auto-complete-withAPI";
 import TicTacToe from "./components/tic-tact-toe";
+import FeatureFlagGlobalState from "./components/feature-flag/context";
+import FeatureFlags from "./components/feature-flag";
 function App() {
   return (
     <div className="App">
       {/* Accordian Component */}
-      <Accordian />
+      {/* <Accordian /> */}
 
       {/* Random Color Component */}
-      <RandomColor />
+      {/* <RandomColor /> */}
 
       {/* Star Rating Component */}
-      <StarRating noOfStars={10} />
+      {/* <StarRating noOfStars={10} /> */}
 
       {/* Image Slider Component */}
-      <ImageSlider
+      {/* <ImageSlider
         url={"https://picsum.photos/v2/list"}
         limit={"10"}
         page={"1"}
-      />
+      /> */}
 
       {/* Load More Data Component */}
-      <LoadMoreData />
+      {/* <LoadMoreData /> */}
 
       {/* Tree View Component or Recursive Navigation Menu */}
-      <TreeView menus={menus} />
+      {/* <TreeView menus={menus} /> */}
+
       {/* QR Code Generator */}
-      <QRCodeGenerator />
+      {/* <QRCodeGenerator /> */}
 
       {/* Light and Dark Mode Component */}
-      <LightDarkMode />
+      {/* <LightDarkMode /> */}
+
       {/* Scroll Indicator Component */}
-      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
 
       {/* Custom Tabs Component */}
-      <TabTest />
+      {/* <TabTest /> */}
+
       {/* Custom Modal Component */}
-      <ModalTest />
+      {/* <ModalTest /> */}
 
       {/* Github Profile Finder Component */}
-      <GitHubProfileFinder />
+      {/* <GitHubProfileFinder /> */}
 
       {/* Search Autocomplete with API Component */}
-      <SearchAutoComplete />
+      {/* <SearchAutoComplete /> */}
+
       {/* Tic Tac Toe Component */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
+
+      {/* Feature Flag Implentation */}
+      <FeatureFlagGlobalState>
+        <FeatureFlags />
+      </FeatureFlagGlobalState>
     </div>
   );
 }
