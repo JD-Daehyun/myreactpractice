@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import useFetch from "../use-fetch";
-
+import '../use-fetch/styles.css'
 export default function ScrollToTopAndBottom() {
   const { data, error, pending } = useFetch(
     "https://dummyjson.com/products?limit=100",
@@ -8,11 +8,10 @@ export default function ScrollToTopAndBottom() {
   );
 
   const bottomRef = useRef(null);
+  const topRef = useRef(null);
 
   function handleScrollToTop(){
-    window.scrollTo({
-        top: 0, left: 0, behavior: 'smooth'
-    })
+    topRef.current.scrollIntoView({behavior: 'smooth'});
   };
 
   function handleScrollToBottom(){
@@ -20,7 +19,8 @@ export default function ScrollToTopAndBottom() {
   }
 
   return (
-    <div>
+    <div className="custom-hook-container">
+      <div ref={topRef}></div>
       <h1>Scroll To Top and Bottom Feature</h1>
       <h3>This is the TOP</h3>
       <button onClick={handleScrollToBottom}>Scroll To Bottom</button>

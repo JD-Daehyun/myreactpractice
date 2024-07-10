@@ -1,4 +1,5 @@
 import useFetch from ".";
+import "./styles.css";
 
 export default function UseFetchHookTest() {
   const { data, error, pending } = useFetch(
@@ -7,7 +8,7 @@ export default function UseFetchHookTest() {
   );
   console.log(error, data, pending);
   return (
-    <div>
+    <div className="custom-hook-container">
       <h1>Use Fetch Hook</h1>
       {error ? <h3>Error</h3> : null}
       {pending ? <h3>Pending! Please Wait</h3> : null}

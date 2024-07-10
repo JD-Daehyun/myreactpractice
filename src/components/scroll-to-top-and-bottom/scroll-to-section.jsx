@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import '../use-fetch/styles.css'
 
 export default function ScrollToSection() {
   const data = [
@@ -47,15 +48,15 @@ export default function ScrollToSection() {
   const ref = useRef(null);
 
   function handleScrollToSection(){
-    let pos = ref.current.getBoundingClientRect().top;
+      ref.current.scrollIntoView({behavior: 'smooth'});
 
-    window.scrollTo({
-        top: pos,
-        behavior: 'smooth'
-    })
+  //   window.scrollTo({
+  //       top: pos,
+  //       behavior: 'smooth'
+  //   })
   }
   return (
-    <div>
+    <div className="custom-hook-container">
       <h1>Scroll to a particular section</h1>
       <button onClick={handleScrollToSection}>Click to Scroll</button>
       {data.map((dataItem, index) => (
